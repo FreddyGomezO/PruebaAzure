@@ -3,87 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenido a Azure</title>
+  <title>Login - Azure</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      background-size: 300% 300%;
-      animation: gradientMove 10s ease infinite;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #000000, #0a3d62);
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      backdrop-filter: blur(15px);
-      background: rgba(255, 255, 255, 0.15);
-      padding: 50px 70px;
-      border-radius: 25px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    .login-container {
+      background: #fff;
+      padding: 40px 50px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      width: 350px;
       text-align: center;
-      color: #fff;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .container:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    .login-container h1 {
+      color: #0a3d62;
+      margin-bottom: 25px;
     }
 
-    h1 {
-      font-size: 2.8em;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-
-    h2 {
-      font-size: 1.6em;
-      font-weight: 400;
-      margin-bottom: 15px;
-      opacity: 0.9;
-    }
-
-    p {
-      font-size: 1.2em;
-      color: #f0f0f0;
-      opacity: 0.85;
-    }
-
-    .logo {
-      width: 100px;
+    .input-group {
       margin-bottom: 20px;
-      filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
-      animation: float 4s ease-in-out infinite;
+      text-align: left;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #0a3d62;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 0.9em;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Logo de Azure -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure Logo" class="logo">
-    <h1>Bienvenido a Azure</h1>
-    <h2>Freddy Gomez</h2>
-    <p>🌐 Prueba de subida de página web en Azure</p>
+  <div class="login-container">
+    <h1>Login</h1>
+    <div class="input-group">
+      <label for="username">Usuario</label>
+      <input type="text" id="username" placeholder="Ingrese su usuario">
+    </div>
+    <div class="input-group">
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" placeholder="Ingrese su contraseña">
+    </div>
+    <button class="btn" onclick="login()">Ingresar</button>
+    <div class="message" id="message"></div>
   </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("message");
+
+      // Datos quemados
+      if (username === "admin" && password === "1234") {
+        message.textContent = "✅ Bienvenido, acceso correcto";
+        message.className = "message success";
+      } else {
+        message.textContent = "❌ Usuario o contraseña incorrectos";
+        message.className = "message error";
+      }
+    }
+  </script>
 </body>
 </html>
