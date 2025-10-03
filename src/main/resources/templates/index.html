@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido a Azure</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0078d4, #00bcf2, #59d2fe);
+      background-size: 300% 300%;
+      animation: gradientMove 8s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 60px 80px;
+      border-radius: 20px;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-10px);
+    }
+
+    h1 {
+      color: #0078d4;
+      font-size: 2.8em;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 1.5em;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .logo {
+      width: 90px;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo de Azure -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Azure Logo" class="logo">
+    <h1>Bienvenido a Azure</h1>
+    <h2>Freddy Gomez</h2>
+    <p>Prueba de subida de página web en Azure</p>
+  </div>
+</body>
+</html>
